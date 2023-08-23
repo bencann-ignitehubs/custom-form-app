@@ -11,7 +11,7 @@ class ExtraInfo(models.Model):
     The form that wraps this model is in the forms.py file.
     """
     user = models.OneToOneField(USER_MODEL, null=True, on_delete=models.CASCADE)
-    
+
     FAVORITE_EDITOR = (
         ('vim', 'Vim'),
         ('emacs', 'Emacs'),
@@ -26,6 +26,5 @@ class ExtraInfo(models.Model):
     favorite_editor = models.CharField(
         verbose_name="Favorite Editor",
         choices=FAVORITE_EDITOR,
-        blank=True, 
         max_length=5,
     )
